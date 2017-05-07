@@ -1,0 +1,32 @@
+<%= form_for(prato) do |f| %>
+  <% if prato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prato.errors.count, "error") %> prohibited this prato from being saved:</h2>
+
+      <ul>
+      <% prato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :restaurante_id %>
+    <%= collection_select(:prato, :restaurante_id, Restaurante.all, :id, :nome, {:prompt => ' --- Selecione um restaurante --- '}, {:class => 'form-control'})  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome, "Prato" %>
+    <%= f.text_field :nome, {class: 'form-control', placeholder: 'nome do restaurante'} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :preco %>
+    <%= f.text_field :preco, {class: 'form-control', placeholder: 'nome do restaurante'} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Salvar',  {class: 'btn btn-success'} %>
+  </div>
+<% end %>

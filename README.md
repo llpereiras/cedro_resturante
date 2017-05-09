@@ -1,24 +1,24 @@
-# README
+# Cedro Restaurante
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto tem por objetivo um agregador de restaurantes e seus respectivos pratos.
 
-Things you may want to cover:
+  * Irá contar com buscas por nome de restaurante.
 
-* Ruby version
+  * Visualização de preços
 
-* System dependencies
 
-* Configuration
+# Instalação
 
-* Database creation
+  * Realizar o clone do projeto
 
-* Database initialization
+  * Realizar a instalação das dependencias executando: **bundle install**
 
-* How to run the test suite
+  * Realizar a configuração do banco de dados. Pode ser utilizado o arquivo de exemplo: **config/database.yml-sample**
 
-* Services (job queues, cache servers, search engines, etc.)
+  * Para criar o banco de dados execute: **rails db:create**
 
-* Deployment instructions
+  * Para criar as tabelas necessárias para o projeto execute: **rails db:migrate**
 
-* ...
+  * Para rodar o projeto execute: **rails s**
+
+  * Acesse a url **http://localhost:3000** e veja a aplicação funcionando.

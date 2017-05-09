@@ -12,20 +12,21 @@
 
 ActiveRecord::Schema.define(version: 20170507034002) do
 
-  create_table "pratos", force: :cascade do |t|
+  create_table "pratos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "restaurante_id"
     t.string   "nome"
     t.decimal  "preco",          precision: 30, scale: 10
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.index ["restaurante_id"], name: "index_pratos_on_restaurante_id"
+    t.index ["restaurante_id"], name: "index_pratos_on_restaurante_id", using: :btree
   end
 
-  create_table "restaurantes", force: :cascade do |t|
+  create_table "restaurantes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nome"
     t.string   "endereco"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pratos", "restaurantes"
 end

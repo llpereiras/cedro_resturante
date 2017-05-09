@@ -21,3 +21,6 @@
 .byebug_history
 
 /spring-1000/*
+
+#Arquivo de configuração de banco de dados
+config/database.yml
